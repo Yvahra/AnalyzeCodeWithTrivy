@@ -15,7 +15,7 @@ jobs:
     - name: Generate tarball from image
       run: |
         docker pull nginx:latest
-        docker save -o vuln-image.tar nginx.lqtest
+        docker save -o vuln-image.tar nginx.latest
         
     - name: Run Trivy vulnerability scanner in tarball mode
       uses: aquasecurity/trivy-action@master
