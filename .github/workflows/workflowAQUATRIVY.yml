@@ -14,11 +14,11 @@ jobs:
 
     - name: Generate tarball from image
       run: |
-        docker pull nginx:latest
-        docker save -o vuln-image.tar nginx.lqtest
+        docker pull bkimminich/juice-shop
+        docker save -o vuln-image.tar bkimminich/juice-shop
         
     - name: Run Trivy vulnerability scanner in tarball mode
       uses: aquasecurity/trivy-action@master
       with:
         input: /github/workspace/vuln-image.tar
-        severity: 'CRITICAL,HIGH'
+        severity: 'CRITICAL,HIGH,MEDIUM,LOW'
