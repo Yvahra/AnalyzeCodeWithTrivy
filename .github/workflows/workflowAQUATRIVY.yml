@@ -21,4 +21,4 @@ jobs:
       uses: aquasecurity/trivy-action@master
       with:
         input: /github/workspace/vuln-image.tar
-        severity: 'CRITICAL,HIGH'
+        severity: 'CRITICAL,HIGH,MEDIUM,LOW'
